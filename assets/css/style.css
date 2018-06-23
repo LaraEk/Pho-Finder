@@ -1,0 +1,25 @@
+body {
+  background-color: white;
+}
+
+.mainHeader {
+  margin-top: 30px;
+}
+
+.mainContainer {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.btn3d.btn-warning {
+  width: 200px;
+  height: 50px;
+  box-shadow: 0 0 0 1px #d79a47 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #D79A34, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+	background-color: #FEAF20; color: white;
+}
+
+.btn3d.btn-warning:active,
+.btn3d.btn-warning.active {
+	box-shadow: 0 0 0 1px #d79a47 inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+	background-color: #FEAF20; color: white;
+}
