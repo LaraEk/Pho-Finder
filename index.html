@@ -4,58 +4,63 @@
 
 <head>
 
-  <meta charset="UTF-8">
-  <title>Pho Finder</title>
+   <meta charset="UTF-8">
+   <title>Pho Finder</title>
 
-  <!-- Bootstrap -->
-  <!-- add a favicon! -->
-  <link rel="stylesheet" href="assets/css/reset.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+   <!-- Bootstrap -->
+   <!-- add a favicon! -->
+   <link rel="stylesheet" href="assets/css/reset.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/style.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-  <!-- Firebase Reference -->
-  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+   <!-- Firebase Reference -->
+   <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 
+    <meta charset="UTF-8">
+    <title>Pho Finder</title>
 
+    <!-- Bootstrap -->
+    <!-- add a favicon! -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 </head>
 <body>
-
-<!-- blank row above -->
-  <div class="row">
-    <div class="col-md-12"></div>
+  <div class="section">
+    <div class="col-md-12">
+      <div class="mainHeader">
+        <img src="../Pho-Finder/assets/images/phoLogo.png">
+      </div>
+      <div class="mainContainer">
+        <button type="button" class="btn btn-location btn-lg btn3d" onclick="getLocation()">
+          <span class="glyphicon glyphicon-warning-sign"></span>
+          &hearts;Find Near You&hearts;
+        </button>
+        <div class="or">
+          <h4>OR</h4>
+        </div>
+        <button type="button" class="btn btn-zip btn-lg btn3d">
+          <span class="glyphicon glyphicon-warning-sign"></span>
+          &hearts;Enter Your Zipcode&hearts;
+        </button>
+      </div>
+    </div>
   </div>
 
 
-
-
-
-<div class="row">
-
-        <div class="col-md-3"></div>
-    <!-- blank spacer column -->
-
-    <div class="col-md-6">
-      <div class="mainHeader"><img src="../Pho-Finder/assets/images/phoLogo.png" height="400px" width="600px"></div>
-      <div class="mainContainer">
-      <button type="button" class="btn btn-location btn-lg btn3d"><span class="glyphicon glyphicon-warning-sign"></span>&hearts;Find Near You&hearts;</button>
-      <div class="or"><h4>OR</h4></div>
-      <button type="button" class="btn btn-zip btn-lg btn3d"><span class="glyphicon glyphicon-warning-sign"></span>&hearts;Enter Your Zipcode&hearts;</button>
-
-      </div>
-    </div>
-
-    <!-- blank spacer column -->
-    <div class="col-md-3"></div>
-
-</div>
-
-
+<br>
 <!-- blank row below -->
-    <div class="row">
-      <div class="col-md-12"></div>
-    </div>
+   <div class="row section">
+     <div class="col-md-6" id="mapholder"></div>
+     <div class="col-md-6"></div>
+   </div>
 
 
 
@@ -63,18 +68,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-    <!-- JavaScript -->
+   <!-- JavaScript -->
 <script src="assets/javascript/script.js"></script>
 
 </body>
