@@ -1,13 +1,29 @@
 body {
   background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
-
+.section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 .mainHeader {
-  margin-top: 30px;
+}
+.mainHeader img {
+  height: auto;
+  width: 100%;
 }
 
 .mainContainer {
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   margin-top: 30px;
 }
 
@@ -16,15 +32,12 @@ body {
   height: 50px;
   box-shadow: 0 0 0 1px #d79a47 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #D79A34, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
 	background-color: #FEAF20; color: white;
-  float: left;
-  margin-left: 75px;
 }
 
 .btn3d.btn-location:active,
 .btn3d.btn-location.active {
 	box-shadow: 0 0 0 1px #d79a47 inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
 	background-color: #FEAF20; color: white;
-  float: left;
 }
 
 .btn3d.btn-zip {
@@ -32,18 +45,21 @@ body {
   height: 50px;
   box-shadow: 0 0 0 1px #778899 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #ae3739, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
 	background-color: #e32326; color: white;
-  float: left;
 }
 
 .btn3d.btn-zip:active,
 .btn3d.btn-zip.active {
 	box-shadow: 0 0 0 1px #778899 inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
 	background-color: #e32326; color: white;
-  float: left;
 }
 
 .or {
-  float: left;
   padding: 0px 20px 0px 20px;
   margin-top: 10px;
+}
+
+@media screen and (max-width: 555px){
+  .mainContainer {
+    flex-direction: column;
+  }
 }
