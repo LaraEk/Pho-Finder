@@ -63,3 +63,16 @@ body {
     flex-direction: column;
   }
 }
+
+#maincontent {
+  background-color:#ffffff;
+  margin: 7% 10% 0 10%; 
+  color: #5f0606;
+  padding: 0 15px 15px 15px;
+  border-style: solid;
+  border-width: 2px;
+  border-color:#fad816;
+  border-radius: 15px;
+  top: 100px;
+  line-height: 25px;
+}
