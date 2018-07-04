@@ -1,3 +1,5 @@
+$("#landingpage").hide();
+
 var x = document.getElementById("map");
 
 function getLocation() {
@@ -24,8 +26,44 @@ function showPosition(position) {
 
         console.log(response);
         console.log(queryURL);
-          
-      });
+        
 
+        // var imgURL = response.results["0"].photos["0"].photo_reference;
+
+        //   // Creating an element to hold the image
+        //   var image = $("<img>").attr("src", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + imgURL + "&key=AIzaSyB3S0uLo0IY9-hlsfrM3aa-jDCLm9ffE6M");
+        //   var mapDiv = $("#map");
+        //   mapDiv.append(image);
+          var i = 0;
+          var restaurants = [];
+
+          for (i = 0; i < 10; i++) {
+             var imgURL = response.results[i].photos["0"].photo_reference;
+
+            // var image = $("<img>").attr("src", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + imgURL + "&key=AIzaSyB3S0uLo0IY9-hlsfrM3aa-jDCLm9ffE6M");
+            // var mapDiv = $("#map");
+            // mapDiv.append(image);
+
+                restaurants += "<div id=" + response.results[i].name + 
+                                " class='restaurants' " +
+                                "<br> Restaurant Name: " + response.results[i].name + 
+                                "<br> Restaurant Rating: " + response.results[i].rating +
+                                "<br> Restaurant Photo: " + response.results[i].photos["0"].photo_reference + ">";
+                                var image = $("<img>").attr("src", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + imgURL + "&key=AIzaSyB3S0uLo0IY9-hlsfrM3aa-jDCLm9ffE6M");
+
+//                                 "><img src=https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + imgURL + "&key=AIzaSyB3S0uLo0IY9-hlsfrM3aa-jDCLm9ffE6M";
+            $("#restaurantcards").html(restaurants);
+            $("#restaurantcards").append(image);
+
+            console.log("this bit is working");
+                 
+          }
+    }
+          
+      );
 
 }
+
+$(".btn").click(function(){
+    $("#landingpage").show();
+  });

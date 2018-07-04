@@ -40,3 +40,12 @@ body {
   padding: 0px 20px 0px 20px;
   margin-top: 10px;
 }
+
+.card {
+  width: 500px;
+  margin-right:200px;
+}
+
+.restaurants {
+  background-color: #e32326; color: white;
+}
