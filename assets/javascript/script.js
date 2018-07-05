@@ -16,7 +16,7 @@ function showPosition(position) {
 
     // var queryURL = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=pho&inputtype=textquery&fields=photos,formatted_address,name,opening_hours,rating&locationbias=circle:20000@" + x.innerHTML + "&key=AIzaSyB3S0uLo0IY9-hlsfrM3aa-jDCLm9ffE6M";
     // var queryURL = "https://maps.googleapis.com/maps/api/place/details/json?input=pho&inputtype=textquery&fields=name,photo,rating,review,formatted_phone_number&locationbias=circle:20000@" + x.innerHTML + "&key=AIzaSyB3S0uLo0IY9-hlsfrM3aa-jDCLm9ffE6M";
-    var queryURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + x.innerHTML + "&radius=1500&type=restaurant&keyword=pho&key=AIzaSyB3S0uLo0IY9-hlsfrM3aa-jDCLm9ffE6M";
+    var queryURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + x.innerHTML + "&radius=5500&type=restaurant&keyword=pho&key=AIzaSyB3S0uLo0IY9-hlsfrM3aa-jDCLm9ffE6M";
     $.ajax({
       url: queryURL,
       method: "GET"
@@ -37,8 +37,8 @@ function showPosition(position) {
           var i = 0;
           var restaurants = [];
 
-          for (i = 0; i < 10; i++) {
-             var imgURL = response.results[i].photos["0"].photo_reference;
+        for (i = 0; i < 10; i++) {
+            var imgURL = response.results[i].photos["0"].photo_reference;
 
             // var image = $("<img>").attr("src", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + imgURL + "&key=AIzaSyB3S0uLo0IY9-hlsfrM3aa-jDCLm9ffE6M");
             // var mapDiv = $("#map");
@@ -48,7 +48,8 @@ function showPosition(position) {
                                 " class='restaurants' " +
                                 "<br> Restaurant Name: " + response.results[i].name + 
                                 "<br> Restaurant Rating: " + response.results[i].rating +
-                                "<br> Restaurant Photo: " + response.results[i].photos["0"].photo_reference + ">";
+                                "<br> Restaurant Address: " + response.results[i].vicinity 
+                                
                                 var image = $("<img>").attr("src", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + imgURL + "&key=AIzaSyB3S0uLo0IY9-hlsfrM3aa-jDCLm9ffE6M");
 
 //                                 "><img src=https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + imgURL + "&key=AIzaSyB3S0uLo0IY9-hlsfrM3aa-jDCLm9ffE6M";
