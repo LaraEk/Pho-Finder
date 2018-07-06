@@ -39,8 +39,8 @@ function showPosition(position) {
           var i = 0;
           var restaurants = [];
 
-          for (i = 0; i < 10; i++) {
-             var imgURL = response.results[i].photos["0"].photo_reference;
+        for (i = 0; i < 10; i++) {
+            var imgURL = response.results[i].photos["0"].photo_reference;
 
             // var image = $("<img>").attr("src", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + imgURL + "&key=AIzaSyB3S0uLo0IY9-hlsfrM3aa-jDCLm9ffE6M");
             // var mapDiv = $("#map");
