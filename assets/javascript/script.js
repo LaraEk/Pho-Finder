@@ -1,4 +1,9 @@
-$("#landingpage").hide();
+
+$(document).ready(function(){  
+  $('#gifPage').hide();
+  $("#landingpage").hide();
+});
+// $("#landingpage").hide();
 
 $("button").click(function(){
     $("button").hide();
@@ -7,6 +12,7 @@ $("button").click(function(){
 var x = document.getElementById("map");
 
 function getLocation() {
+  $("#map").hide();
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else {
@@ -71,11 +77,52 @@ function showPosition(position) {
             console.log("this bit is working");
 
           }
+          $("img").on("click", function() {
+            $("#landingpage").empty();
+            $("#gifPage").show();
+        
+          
+  
+      var queryURL = "https://api.giphy.com/v1/gifs/search?q=pho&api_key=dc6zaTOxFJmzC&limit=1";
+        
+            $.ajax({
+              url: queryURL,
+              method: "GET"
+            })
+              .then(function(response) {
+                console.log(queryURL);
+        
+                console.log(response);
+              
+                var results = response.data;
+                // Looping through each result item
+                for (var i = 0; i < results.length; i++) {   
+                  // Creating and storing div and p tags
+                  var foodDiv = $("<div>");
+                  // foodDiv.addClass("newDiv");
+        
+                  // var p = $("<p>").text("It's Pho-King Time!");
+                  // Creating and storing an image tag
+                  var foodImage = $("<img>");
+                  // Setting the src attribute of the image to a property pulled off the result item
+                  foodImage.attr("src", results[i].images.fixed_height.url);
+                  foodImage.addClass("gifSize");
+             
+                  // Appending the paragraph and image tag to the foodDiv
+                  // foodDiv.append(p);
+                  foodDiv.append(foodImage);
+                  
+                  $("#gifs").prepend(foodDiv);
+                }
+                
+        
+              });
+          });
+  
+        });
     }
 
-      );
-
-}
+      
 
 $(".btn").click(function(){
     $("#landingpage").show();

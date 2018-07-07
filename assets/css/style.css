@@ -88,3 +88,18 @@ body {
   width: 40px;
   height: 40px;
 }
+
+.gifSize {
+  width: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h3 {
+  text-align: center;
+  color: #f34242;
+  font-family: 'Concert One', cursive;
+  font-size: 50px;
+  padding: 20px;
+}
