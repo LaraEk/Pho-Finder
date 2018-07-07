@@ -1,11 +1,15 @@
 $("#landingpage").hide();
 
+$("button").click(function(){
+    $("button").hide();
+});
+
 var x = document.getElementById("map");
 
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
-    } else { 
+    } else {
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
 }
@@ -28,7 +32,7 @@ function showPosition(position) {
 
         console.log(response);
         console.log(queryURL);
-        
+
 
         // var imgURL = response.results["0"].photos["0"].photo_reference;
 
@@ -49,13 +53,13 @@ function showPosition(position) {
               var imageRef = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + response.results[i].photos["0"].photo_reference + "&key=AIzaSyB3S0uLo0IY9-hlsfrM3aa-jDCLm9ffE6M";
 
               console.log(imageRef);
-                restaurants += "<div id=" + response.results[i].name + 
+                restaurants += "<div id=" + response.results[i].name +
                                 " class='restaurants' " +
-                                "<br><img src='" + response.results[i].icon + "'/>"+
-                                "<br> Restaurant Name: " + response.results[i].name + 
-                                "<br> Restaurant Rating: " + response.results[i].rating +
-                                "<br> Restaurant Address: " + response.results[i].vicinity +                    
-                                "<br><img src='" + imageRef + "'/>";
+                                "<br><br><div class='box'><img src='" + 'https://image.flaticon.com/icons/png/128/856/856178.png' + "'/>"+
+                                "<br><strong> Restaurant Name:</strong> " + response.results[i].name +
+                                "<br> <strong>Restaurant Rating:</strong> " + response.results[i].rating +
+                                "<br> <strong>Restaurant Address:</strong> " + response.results[i].vicinity +
+                                "<br><img src='" + imageRef + "'/></div><br><br><br>";
 
                             //this works
                             //https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAEXCtSsDAGshpTZRmgZJDSSrVn8wf33gHNx-ESNkQPOGSaiZsiXB5IvaFwsKQMp63pc3W6CysCwEvor86peTy38W1iwDWHvLoMDo2raD4YpSve1hI_XZuGJBOP2pyOyKXEhAbk6s4wmTDZCvGIbGa0FyFGhS5xDy_N6fCitAPC_iwhuqL_3iNyw&key=AIzaSyB3S0uLo0IY9-hlsfrM3aa-jDCLm9ffE6M
@@ -65,10 +69,10 @@ function showPosition(position) {
           //  $("#restaurantcards").append(image);
 
             console.log("this bit is working");
-                 
+
           }
     }
-          
+
       );
 
 }

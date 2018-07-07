@@ -7,6 +7,7 @@ body {
 .mainContainer {
   text-align: center;
   margin-top: 30px;
+
 }
 .btn3d.btn-location {
   width: relative;
@@ -14,7 +15,7 @@ body {
   box-shadow: 0 0 0 1px #d79a47 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #D79A34, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
     background-color: #FEAF20; color: white;
   float: left;
-  margin-left: 75px;
+  margin-left: 200px;
 }
 .btn3d.btn-location:active,
 .btn3d.btn-location.active {
@@ -47,5 +48,43 @@ body {
 }
 
 .restaurants {
-  background-color: #e32326; color: white;
+   color: black;
+}
+
+#restaurantcards {
+  border: 10px;
+  margin-left: 75px;
+  width: 1000px;
+  text-align: center;
+}
+
+.phoimage {
+  margin-left: 200px;
+}
+
+.box {
+  border: 10px;
+  border-style: dashed;
+  border-color: #e32326;
+   width: 750px;
+   height: auto;
+   background-color: yellow;
+   text-align: center;
+   margin-top: -20px;
+   margin-bottom: -20px;
+   margin-left: 100px;
+   padding: 10px 0px 10px 0px;
+
+
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.phoImage {
+  width: 40px;
+  height: 40px;
 }
