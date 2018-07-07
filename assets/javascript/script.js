@@ -24,9 +24,8 @@ function showPosition(position) {
     x.innerHTML = position.coords.latitude + "," +
     position.coords.longitude;
 
-    // var queryURL = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=pho&inputtype=textquery&fields=photos,formatted_address,name,opening_hours,rating&locationbias=circle:20000@" + x.innerHTML + "&key=AIzaSyB3S0uLo0IY9-hlsfrM3aa-jDCLm9ffE6M";
-    // var queryURL = "https://maps.googleapis.com/maps/api/place/details/json?input=pho&inputtype=textquery&fields=name,photo,rating,review,formatted_phone_number&locationbias=circle:20000@" + x.innerHTML + "&key=AIzaSyB3S0uLo0IY9-hlsfrM3aa-jDCLm9ffE6M";
-    var queryURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + x.innerHTML + "&radius=5500&type=restaurant&keyword=pho&key=AIzaSyB3S0uLo0IY9-hlsfrM3aa-jDCLm9ffE6M";
+    
+    var queryURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + x.innerHTML + "&radius=5500&type=restaurant&keyword=pho&key="your API key";
     console.log(queryURL);
     $.ajax({
 
@@ -43,7 +42,7 @@ function showPosition(position) {
         // var imgURL = response.results["0"].photos["0"].photo_reference;
 
         //   // Creating an element to hold the image
-        //   var image = $("<img>").attr("src", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + imgURL + "&key=AIzaSyB3S0uLo0IY9-hlsfrM3aa-jDCLm9ffE6M");
+     
         //   var mapDiv = $("#map");
         //   mapDiv.append(image);
           var i = 0;
@@ -52,11 +51,10 @@ function showPosition(position) {
         for (i = 0; i < 10; i++) {
             var imgURL = response.results[i].photos["0"].photo_reference;
 
-            // var image = $("<img>").attr("src", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + imgURL + "&key=AIzaSyB3S0uLo0IY9-hlsfrM3aa-jDCLm9ffE6M");
             // var mapDiv = $("#map");
             // mapDiv.append(image);
 
-              var imageRef = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + response.results[i].photos["0"].photo_reference + "&key=AIzaSyB3S0uLo0IY9-hlsfrM3aa-jDCLm9ffE6M";
+              var imageRef = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + response.results[i].photos["0"].photo_reference + "&key=your API key";
 
               console.log(imageRef);
                 restaurants += "<div id=" + response.results[i].name +
@@ -68,7 +66,7 @@ function showPosition(position) {
                                 "<br><img src='" + imageRef + "'/></div><br><br><br>";
 
                             //this works
-                            //https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAEXCtSsDAGshpTZRmgZJDSSrVn8wf33gHNx-ESNkQPOGSaiZsiXB5IvaFwsKQMp63pc3W6CysCwEvor86peTy38W1iwDWHvLoMDo2raD4YpSve1hI_XZuGJBOP2pyOyKXEhAbk6s4wmTDZCvGIbGa0FyFGhS5xDy_N6fCitAPC_iwhuqL_3iNyw&key=AIzaSyB3S0uLo0IY9-hlsfrM3aa-jDCLm9ffE6M
+                            
 
 
             $("#restaurantcards").html(restaurants);
@@ -83,7 +81,7 @@ function showPosition(position) {
         
           
   
-      var queryURL = "https://api.giphy.com/v1/gifs/search?q=pho&api_key=dc6zaTOxFJmzC&limit=1";
+      var queryURL = "https://api.giphy.com/v1/gifs/search?q=pho&api_key=your API key&limit=1";
         
             $.ajax({
               url: queryURL,
